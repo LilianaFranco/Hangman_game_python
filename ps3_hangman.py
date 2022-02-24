@@ -41,6 +41,18 @@ def chooseWord(wordlist):
 
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
+
+def underscored(list):
+    '''
+    Assume list is a list
+    it returns a new list of underscores. The number of underscore is teh number of item in list
+    '''
+    newList = []
+    for i in range(len(list)):
+        newList.append('_')
+    return newList
+
+
 wordlist = loadWords()
 
 def isWordGuessed(secretWord, lettersGuessed):
@@ -71,7 +83,16 @@ def getGuessedWord(secretWord, lettersGuessed):
       what letters in secretWord have been guessed so far.
     '''
     # FILL IN YOUR CODE HERE...
-
+    i = 0
+    gameStatus = underscored(secretWord)
+    while i<len(secretWord):
+        if secretWord[i] in lettersGuessed:
+            gameStatus[i] = secretWord[i] 
+            i+=1
+        else:
+            i+=1
+    gameStatus = ''.join(gameStatus)
+    return gameStatus
 
 
 def getAvailableLetters(lettersGuessed):
