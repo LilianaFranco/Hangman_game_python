@@ -51,7 +51,6 @@ def isWordGuessed(secretWord, lettersGuessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
-
     i=0
     guess= True
     while guess==True and i<len(secretWord):
